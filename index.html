@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CBT Log</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="dark">
+    <h1>Cognitive Brain Training Log</h1>
+    <form class="wizard">
+      <textarea
+        class="wizard-1 large-input"
+        id="situation"
+        placeholder="What happened?"
+      ></textarea>
+      <textarea
+        class="wizard-2 large-input"
+        id="reaction"
+        placeholder="How did you react?"
+      ></textarea>
+      <textarea
+        class="wizard-3 large-input"
+        id="reinterpretation"
+        placeholder="How to reinterpret the situation?"
+      ></textarea>
+      <textarea
+        class="wizard-4 large-input"
+        id="outcome"
+        placeholder="What would have been the outcome?"
+      ></textarea>
+      <input
+        class="button"
+        type="button"
+        value="Prior"
+        data-trigger="prior-area"
+      />
+      <input
+        class="button"
+        type="button"
+        value="Next"
+        data-trigger="next-area"
+      />
+    </form>
+    <script type="module">
+      import { init } from "./bin/index.js";
+      init();
+    </script>
+  </body>
+</html>

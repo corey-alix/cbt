@@ -1,0 +1,23 @@
+{
+  "name": "cbt",
+  "version": "1.0.0",
+  "description": "Cognitive Brain Training",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corey-alix/cbt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/corey-alix/cbt/issues"
+  },
+  "homepage": "https://github.com/corey-alix/cbt#readme",
+  "dependencies": {
+    "typescript": "^4.6.3"
+  }
+}

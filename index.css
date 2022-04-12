@@ -1,0 +1,40 @@
+* {
+  --color-dark: #111;
+  --color-light: #999;
+  font-size: 2rem;
+}
+
+.dark {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+.large-input {
+  border: solid;
+  width: calc(100vw - 2rem);
+  height: calc(100vh - 10rem);
+}
+
+.button {
+  border: solid;
+  padding: 0.5rem;
+  min-width: 20vw;
+}
+
+.dark .large-input {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  border-color: var(--color-light);
+}
+
+.dark .button {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  border-color: var(--color-light);
+}
+
+.wizard .wizard-2,
+.wizard .wizard-3,
+.wizard .wizard-4 {
+  display: none;
+}
