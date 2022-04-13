@@ -8,7 +8,7 @@ body {
   width: 100vw;
   height: 100vh;
   margin: 0;
-  padding: 0;
+  padding: 0.5rem;
   position: absolute;
 }
 .dark {
@@ -42,4 +42,8 @@ body {
 
 .hidden {
   display: none;
+}
+
+.center {
+  text-align: center;
 }
