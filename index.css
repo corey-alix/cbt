@@ -5,10 +5,11 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0.5rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
   position: absolute;
 }
 .dark {
@@ -18,8 +19,8 @@ body {
 
 .large-input {
   border: solid;
-  width: calc(100vw - 2rem);
-  height: calc(100vh - 10rem);
+  width: calc(100% - 0.5rem);
+  height: calc(100vh - 1rem);
 }
 
 .button {
@@ -50,4 +51,13 @@ body {
 
 textarea {
   resize: none;
+}
+
+.wizard {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  overflow: auto;
 }
