@@ -43,11 +43,8 @@ export function run() {
   });
 
   on("finish", () => {
-    const formData = "situation,reaction,reinterpretation,outcome"
-      .split(",")
-      .map((e) => document.querySelector(`#${e}`) as HTMLTextAreaElement)
-      .map((e) => e.value);
-
+    const form = document.querySelector("form.wizard") as HTMLFormElement;
+    const formData = getFormData(form);
     const db = JSON.parse(localStorage.getItem("cbt-db") || "[]") as Array<{
       tick: number;
       situation: string;
@@ -58,14 +55,19 @@ export function run() {
 
     db.unshift({
       tick: Date.now(),
-      situation: formData[0],
-      reaction: formData[1],
-      reinterpretation: formData[2],
-      outcome: formData[3],
+      ...formData,
     });
 
     localStorage.setItem("cbt-db", JSON.stringify(db));
 
     location.href = "./pages/summary.html";
   });
+}
+function getFormData(form: HTMLFormElement) {
+  const inputs = Array.from(
+    form.querySelectorAll("[id]")
+  ) as HTMLInputElement[];
+  const formData = {} as any;
+  inputs.filter((e) => e.value).forEach((e) => (formData[e.id] = e.value));
+  return formData;
 }
