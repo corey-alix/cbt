@@ -8,12 +8,49 @@
   </head>
   <body class="dark">
     <form class="wizard">
-      <textarea
-        class="wizard-step large-input"
-        id="situation"
-        placeholder="What happened? Where? When? Who with? How?"
-      ></textarea>
-      <div class="wizard-step">
+      <step class="wizard-step">
+        <label
+          >What Happened?
+          <textarea
+            class="large-input"
+            id="situation"
+            placeholder="What happened?"
+          ></textarea>
+        </label>
+        <label
+          >Where did this happen?
+          <textarea
+            class="small-input"
+            id="situation-where"
+            placeholder="Where did this happen?"
+          ></textarea>
+        </label>
+        <label
+          >When did this happen?
+          <textarea
+            class="small-input"
+            id="situation-when"
+            placeholder="When did this happen?"
+          ></textarea>
+        </label>
+        <label
+          >With whom did this happen?
+          <textarea
+            class="small-input"
+            id="situation-whom"
+            placeholder="With whom did this happen?"
+          ></textarea>
+        </label>
+        <label
+          >How did this happen?
+          <textarea
+            class="large-input"
+            id="situation-how"
+            placeholder="How did this happen?"
+          ></textarea>
+        </label>
+      </step>
+      <step class="wizard-step">
         <label
           >how intense was the mood?
           <input id="mood-intensity" type="range" min="1" max="5"
@@ -21,44 +58,111 @@
         <textarea
           class="large-input"
           id="mood"
-          placeholder="What emotions did I feel at that time? What else?"
+          placeholder="What emotions did I feel at that time?"
         ></textarea>
         <textarea
-          class="large-input"
+          class="small-input"
+          id="mood-other"
+          placeholder="What else did you feel?"
+        ></textarea>
+        <textarea
+          class="small-input"
           id="sensation"
           placeholder="What did I notice in my body?  Where did I feel it?"
         ></textarea>
-      </div>
-      <textarea
-        class="wizard-step large-input"
-        id="reaction"
-        placeholder="
+      </step>
+      <step class="wizard-step">
+        <textarea
+          class="large-input"
+          id="reaction"
+          placeholder="
 What went through my mind?  
 What disturbed me? 
 What did those thoughts mean to me or say about me or the situation?
 What am I responding to?
+        "
+        ></textarea>
+      </step>
+      <step class="wizard-step">
+        <textarea
+          class="small-input"
+          id="reaction-trigger"
+          placeholder="
 What 'button' is this pressing for me?
+        "
+        ></textarea>
+      </step>
+      <step class="wizard-step">
+        <textarea
+          class="large-input"
+          id="reaction-worstcasescenario"
+          placeholder="
 What would be the worst thing that could happen?
         "
-      ></textarea>
-      <textarea
-        class="wizard-step large-input"
-        id="reinterpretation"
-        placeholder="
+        ></textarea>
+      </step>
+      <step class="wizard-step">
+        <textarea
+          class="large-input"
+          id="reinterpretation"
+          placeholder="
 Take a breath...is this fact or opinion? 
 What would someone else say about this situation?  
 What is the bigger picture?
 Is there another way of seeing it?
 What advice would I give someone else?
-Is my reaction in proportion to the actual event?
-Is this really as important as it seems?
         "
-      ></textarea>
-      <textarea
-        class="wizard-step large-input"
-        id="outcome"
-        placeholder="What could I do differently? What would be more effective?"
-      ></textarea>
+        ></textarea>
+        <label class="yesorno yes">
+          <input
+            class="checkbox"
+            type="checkbox"
+            id="overreacted"
+            checked="true"
+            data-trigger="yesorno-toggler"
+          />Is my reaction in proportion to the actual event? <br />
+          <textarea
+            class="if-yes large-input"
+            id="important"
+            placeholder="Explain why."
+          ></textarea>
+        </label>
+        <label class="yesorno yes">
+          <input
+            class="checkbox"
+            type="checkbox"
+            id="overreacted"
+            checked="true"
+            data-trigger="yesorno-toggler"
+          />Is this really as important as it seems? <br />
+          <textarea
+            class="if-yes large-input"
+            id="important"
+            placeholder="Explain why it was so important."
+          ></textarea>
+        </label>
+        <label class="yesorno no">
+          <input
+            class="checkbox"
+            type="checkbox"
+            id="alternative-view-exists"
+            data-trigger="yesorno-toggler"
+          />Is there another way of seeing it? <br />
+          <textarea
+            class="if-yes large-input"
+            id="alternative-view"
+            placeholder="What is it?"
+          ></textarea>
+        </label>
+      </step>
+      <step class="wizard-step">
+        <textarea
+          class="large-input"
+          id="outcome"
+          placeholder="What could I do differently? What would be more effective?"
+        ></textarea>
+      </step>
+      <br />
       <input
         class="button"
         type="button"

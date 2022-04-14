@@ -3,12 +3,13 @@ function showArea(areas: HTMLElement[], currentStep: number) {
   areas[currentStep].focus();
 }
 
-function trigger(eventName: string) {
-  document.dispatchEvent(new CustomEvent(eventName));
+function trigger(eventName: string, data: any = null) {
+  const event = new CustomEvent(eventName, { detail: data });
+  document.dispatchEvent(event);
 }
 
-function on(eventName: string, cb: () => void) {
-  document.addEventListener(eventName, cb);
+function on(eventName: string, cb: (detail?: any) => void) {
+  document.addEventListener(eventName, (e) => cb((<any>e).detail || null));
 }
 
 export function run() {
@@ -18,7 +19,16 @@ export function run() {
   triggers.forEach((element) => {
     const data = element.dataset.trigger;
     if (!data) return;
-    element.addEventListener("click", () => trigger(data));
+    if (element instanceof HTMLInputElement) {
+      switch (element.type) {
+        case "button":
+          element.addEventListener("click", () => trigger(data, { element }));
+          break;
+        case "checkbox":
+          element.addEventListener("change", () => trigger(data, { element }));
+          break;
+      }
+    }
   });
 
   let currentStep = 0;
@@ -61,6 +71,14 @@ export function run() {
     localStorage.setItem("cbt-db", JSON.stringify(db));
 
     location.href = "./pages/summary.html";
+  });
+
+  on("yesorno-toggler", (detail: { element: HTMLInputElement }) => {
+    const yesorno = detail.element.closest(".yesorno") as HTMLElement;
+    if (!yesorno) return;
+    const yes = detail.element.checked;
+    yesorno.classList.toggle("yes", yes);
+    yesorno.classList.toggle("no", !yes);
   });
 }
 function getFormData(form: HTMLFormElement) {
