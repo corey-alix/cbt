@@ -85,3 +85,7 @@ textarea {
   width: 2rem;
   height: 2rem;
 }
+
+.fill-width {
+  width: 100%;
+}

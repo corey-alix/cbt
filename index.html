@@ -53,12 +53,19 @@
       <step class="wizard-step">
         <label
           >how intense was the mood?
-          <input id="mood-intensity" type="range" min="1" max="5"
+          <input
+            class="fill-width"
+            id="mood-intensity"
+            type="range"
+            min="1"
+            max="10"
+            value="1"
         /></label>
+        <label for="mode">What emotions did you feel at that time?</label>
         <textarea
           class="large-input"
           id="mood"
-          placeholder="What emotions did I feel at that time?"
+          placeholder="What emotions did you feel at that time?"
         ></textarea>
         <textarea
           class="small-input"
@@ -68,19 +75,25 @@
         <textarea
           class="small-input"
           id="sensation"
-          placeholder="What did I notice in my body?  Where did I feel it?"
+          placeholder="What did you notice in your body?  Where did you feel it?"
         ></textarea>
       </step>
       <step class="wizard-step">
+        <label for="reaction">What went through your mind?</label>
         <textarea
-          class="large-input"
-          id="reaction"
-          placeholder="
-What went through my mind?  
-What disturbed me? 
-What did those thoughts mean to me or say about me or the situation?
-What am I responding to?
-        "
+          class="small-input"
+          id="reaction-mind"
+          placeholder="What went through your mind?"
+        ></textarea>
+        <textarea
+          class="small-input"
+          id="reaction-disturbance"
+          placeholder="What disturbed me?"
+        ></textarea>
+        <textarea
+          class="small-input"
+          id="reaction-interpretation"
+          placeholder="What did those thoughts mean to me or say about me or the situation? What are you responding to?"
         ></textarea>
       </step>
       <step class="wizard-step">
@@ -110,7 +123,7 @@ Take a breath...is this fact or opinion?
 What would someone else say about this situation?  
 What is the bigger picture?
 Is there another way of seeing it?
-What advice would I give someone else?
+What advice would you give someone else?
         "
         ></textarea>
         <label class="yesorno yes">
@@ -120,7 +133,7 @@ What advice would I give someone else?
             id="overreacted"
             checked="true"
             data-trigger="yesorno-toggler"
-          />Is my reaction in proportion to the actual event? <br />
+          />Is this reaction in proportion to the actual event? <br />
           <textarea
             class="if-yes large-input"
             id="important"
@@ -159,7 +172,7 @@ What advice would I give someone else?
         <textarea
           class="large-input"
           id="outcome"
-          placeholder="What could I do differently? What would be more effective?"
+          placeholder="What could you do differently? What would be more effective?"
         ></textarea>
       </step>
       <br />
