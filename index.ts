@@ -13,23 +13,8 @@ function on(eventName: string, cb: (detail?: any) => void) {
 }
 
 export function run() {
-  const triggers = Array.from(
-    document.querySelectorAll("[data-trigger]")
-  ) as HTMLElement[];
-  triggers.forEach((element) => {
-    const data = element.dataset.trigger;
-    if (!data) return;
-    if (element instanceof HTMLInputElement) {
-      switch (element.type) {
-        case "button":
-          element.addEventListener("click", () => trigger(data, { element }));
-          break;
-        case "checkbox":
-          element.addEventListener("change", () => trigger(data, { element }));
-          break;
-      }
-    }
-  });
+  applyBehaviors();
+  applyTriggers();
 
   let currentStep = 0;
   const areas = Array.from(
@@ -81,6 +66,44 @@ export function run() {
     yesorno.classList.toggle("no", !yes);
   });
 }
+
+function applyTriggers() {
+  const triggers = Array.from(
+    document.querySelectorAll("[data-trigger]")
+  ) as HTMLElement[];
+  triggers.forEach((element) => {
+    const data = element.dataset.trigger;
+    if (!data) return;
+    if (element instanceof HTMLInputElement) {
+      switch (element.type) {
+        case "button":
+          element.addEventListener("click", () => trigger(data, { element }));
+          break;
+        case "checkbox":
+          element.addEventListener("change", () => trigger(data, { element }));
+          break;
+      }
+    }
+  });
+}
+
+function applyBehaviors() {
+  Object.keys(behaviors).forEach((key) => {
+    document.querySelectorAll(`.${key}`).forEach((element) => {
+      behaviors[<keyof typeof behaviors>(<any>key)](element as HTMLElement);
+    });
+  });
+}
+
+const behaviors = {
+  "scroll-to-top": (e: HTMLElement) => {
+    // scroll the element to the top of the page
+    e.addEventListener("focus", () => {
+      e.scrollIntoView(true);
+    });
+  },
+};
+
 function getFormData(form: HTMLFormElement) {
   const inputs = Array.from(
     form.querySelectorAll("[id]")

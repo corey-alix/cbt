@@ -9,49 +9,46 @@
   <body class="dark">
     <form class="wizard">
       <step class="wizard-step">
-        <label
-          >What Happened?
+        <label class="question" for="situation">What Happened?</label>
           <textarea
-            class="large-input"
+            class="large input"
             id="situation"
             placeholder="What happened?"
           ></textarea>
         </label>
-        <label
-          >Where did this happen?
+        <label class="question" for="situation-where">Where did this happen?</label>  
           <textarea
-            class="small-input"
+            class="small input"
             id="situation-where"
             placeholder="Where did this happen?"
           ></textarea>
-        </label>
-        <label
+        <label class="question" 
           >When did this happen?
           <textarea
-            class="small-input"
+            class="small input scroll-to-top"
             id="situation-when"
             placeholder="When did this happen?"
           ></textarea>
         </label>
-        <label
+        <label class="question" 
           >With whom did this happen?
           <textarea
-            class="small-input"
+            class="small input scroll-to-top"
             id="situation-whom"
             placeholder="With whom did this happen?"
           ></textarea>
         </label>
-        <label
+        <label class="question" 
           >How did this happen?
           <textarea
-            class="large-input"
+            class="large input scroll-to-top"
             id="situation-how"
             placeholder="How did this happen?"
           ></textarea>
         </label>
       </step>
       <step class="wizard-step">
-        <label
+        <label class="question" 
           >how intense was the mood?
           <input
             class="fill-width"
@@ -61,44 +58,44 @@
             max="10"
             value="1"
         /></label>
-        <label for="mode">What emotions did you feel at that time?</label>
+        <label class="question" for="mode">What emotions did you feel at that time?</label>
         <textarea
-          class="large-input"
+          class="large input"
           id="mood"
           placeholder="What emotions did you feel at that time?"
         ></textarea>
         <textarea
-          class="small-input"
+          class="small input scroll-to-top"
           id="mood-other"
           placeholder="What else did you feel?"
         ></textarea>
         <textarea
-          class="small-input"
+          class="small input scroll-to-top"
           id="sensation"
           placeholder="What did you notice in your body?  Where did you feel it?"
         ></textarea>
       </step>
       <step class="wizard-step">
-        <label for="reaction">What went through your mind?</label>
+        <label  class="question" for="reaction">What went through your mind?</label>
         <textarea
-          class="small-input"
+          class="small input"
           id="reaction-mind"
           placeholder="What went through your mind?"
         ></textarea>
         <textarea
-          class="small-input"
+          class="small input"
           id="reaction-disturbance"
           placeholder="What disturbed me?"
         ></textarea>
         <textarea
-          class="small-input"
+          class="small input"
           id="reaction-interpretation"
           placeholder="What did those thoughts mean to you or say about you or the situation? What are you responding to?"
         ></textarea>
       </step>
       <step class="wizard-step">
         <textarea
-          class="small-input"
+          class="small input"
           id="reaction-trigger"
           placeholder="
 What 'button' is this pressing for you?
@@ -107,7 +104,7 @@ What 'button' is this pressing for you?
       </step>
       <step class="wizard-step">
         <textarea
-          class="large-input"
+          class="large input"
           id="reaction-worstcasescenario"
           placeholder="
 What would be the worst thing that could happen?
@@ -116,7 +113,7 @@ What would be the worst thing that could happen?
       </step>
       <step class="wizard-step">
         <textarea
-          class="large-input"
+          class="large input"
           id="reinterpretation"
           placeholder="
 Take a breath...is this fact or opinion? 
@@ -135,7 +132,7 @@ What advice would you give someone else?
             data-trigger="yesorno-toggler"
           />Is this reaction in proportion to the actual event? <br />
           <textarea
-            class="if-yes large-input"
+            class="if-yes large input"
             id="important"
             placeholder="Explain why."
           ></textarea>
@@ -149,7 +146,7 @@ What advice would you give someone else?
             data-trigger="yesorno-toggler"
           />Is this really as important as it seems? <br />
           <textarea
-            class="if-yes large-input"
+            class="if-yes large input"
             id="important"
             placeholder="Explain why it was so important."
           ></textarea>
@@ -162,7 +159,7 @@ What advice would you give someone else?
             data-trigger="yesorno-toggler"
           />Is there another way of seeing it? <br />
           <textarea
-            class="if-yes large-input"
+            class="if-yes large input"
             id="alternative-view"
             placeholder="What is it?"
           ></textarea>
@@ -170,7 +167,7 @@ What advice would you give someone else?
       </step>
       <step class="wizard-step">
         <textarea
-          class="large-input"
+          class="large input"
           id="outcome"
           placeholder="What could you do differently? What would be more effective?"
         ></textarea>
