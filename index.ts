@@ -1,6 +1,6 @@
 function showArea(areas: HTMLElement[], currentStep: number) {
   areas.forEach((e, i) => e.classList.toggle("hidden", i !== currentStep));
-  areas[currentStep].focus();
+  gotoNextFocusable(document.activeElement as HTMLElement);
 }
 
 function trigger(eventName: string, data: any = null) {
@@ -96,6 +96,17 @@ function applyBehaviors() {
 }
 
 const behaviors = {
+  "tab-on-enter": (element: HTMLElement) => {
+    element.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        // fake a tab keypress
+        e.preventDefault();
+        e.stopPropagation();
+        // go to next focusable element
+        gotoNextFocusable(element);
+      }
+    });
+  },
   "scroll-to-top": (e: HTMLElement) => {
     // scroll the element to the top of the page
     e.addEventListener("focus", () => {
@@ -111,4 +122,19 @@ function getFormData(form: HTMLFormElement) {
   const formData = {} as any;
   inputs.filter((e) => e.value).forEach((e) => (formData[e.id] = e.value));
   return formData;
+}
+
+function gotoNextFocusable(element: HTMLElement) {
+  const elements = Array.from(
+    document.querySelectorAll(".tab-on-enter")
+  ) as HTMLElement[];
+  let index = elements.indexOf(element);
+  while (true) {
+    const next = elements[++index % elements.length];
+    // is this element visible?
+    if (next.offsetParent) {
+      next.focus();
+      break;
+    }
+  }
 }

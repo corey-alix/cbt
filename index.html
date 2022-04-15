@@ -11,37 +11,37 @@
       <step class="wizard-step">
         <label class="question" for="situation">What Happened?</label>
           <textarea
-            class="large input"
+            class="large input tab-on-enter"
             id="situation"
             placeholder="What happened?"
           ></textarea>
         </label>
         <label class="question" for="situation-where">Where did this happen?</label>  
           <textarea
-            class="small input"
+            class="small input tab-on-enter"
             id="situation-where"
             placeholder="Where did this happen?"
           ></textarea>
         <label class="question" 
           >When did this happen?
           <textarea
-            class="small input scroll-to-top"
+            class="small input scroll-to-top tab-on-enter"
             id="situation-when"
             placeholder="When did this happen?"
           ></textarea>
         </label>
-        <label class="question" 
-          >With whom did this happen?
+        <label for="situation-whom" class="question" 
+          >With whom did this happen?</label>
           <textarea
-            class="small input scroll-to-top"
+            class="small input scroll-to-top tab-on-enter"
             id="situation-whom"
             placeholder="With whom did this happen?"
           ></textarea>
-        </label>
+        
         <label class="question" 
           >How did this happen?
           <textarea
-            class="large input scroll-to-top"
+            class="large input scroll-to-top tab-on-enter"
             id="situation-how"
             placeholder="How did this happen?"
           ></textarea>
@@ -60,17 +60,17 @@
         /></label>
         <label class="question" for="mode">What emotions did you feel at that time?</label>
         <textarea
-          class="large input"
+          class="large input scroll-to-top tab-on-enter"
           id="mood"
           placeholder="What emotions did you feel at that time?"
         ></textarea>
         <textarea
-          class="small input scroll-to-top"
+          class="small input scroll-to-top tab-on-enter"
           id="mood-other"
           placeholder="What else did you feel?"
         ></textarea>
         <textarea
-          class="small input scroll-to-top"
+          class="small input scroll-to-top tab-on-enter"
           id="sensation"
           placeholder="What did you notice in your body?  Where did you feel it?"
         ></textarea>
@@ -78,7 +78,7 @@
       <step class="wizard-step">
         <label  class="question" for="reaction">What went through your mind?</label>
         <textarea
-          class="small input"
+          class="small input tab-on-enter"
           id="reaction-mind"
           placeholder="What went through your mind?"
         ></textarea>
@@ -130,7 +130,7 @@ What advice would you give someone else?
             id="overreacted"
             checked="true"
             data-trigger="yesorno-toggler"
-          />Is this reaction in proportion to the actual event? <br />
+          />Is this reaction in proportion to the actual event?
           <textarea
             class="if-yes large input"
             id="important"
@@ -180,7 +180,7 @@ What advice would you give someone else?
         data-trigger="prior-area"
       />
       <input
-        class="button"
+        class="button tab-on-enter"
         type="button"
         value="Next"
         data-trigger="next-area"

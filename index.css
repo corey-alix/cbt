@@ -21,7 +21,8 @@ body {
 
 .input {
   border: solid;
-  width: calc(100% - 1rem);
+  margin-left: 1rem;
+  width: calc(100% - 2rem);
 }
 
 .large.input {
@@ -29,7 +30,7 @@ body {
 }
 
 .small.input {
-  height: calc(10vh);
+  height: calc(20vh);
 }
 
 .button {
