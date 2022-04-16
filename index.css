@@ -22,6 +22,7 @@ body {
 .input {
   border: solid;
   width: calc(100% - 1rem);
+  margin-left: 0.25rem;
 }
 
 .large.input {
@@ -76,7 +77,7 @@ textarea {
 }
 
 .wizard-step {
-  grid-column: 2/span 3;
+  grid-column: 2 / span 3;
 }
 
 .col1 {
