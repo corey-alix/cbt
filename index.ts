@@ -113,7 +113,9 @@ const behaviors = {
   "scroll-to-top": (e: HTMLElement) => {
     // scroll the element to the top of the page
     e.addEventListener("focus", () => {
-      e.scrollIntoView(true);
+      const label = e.previousElementSibling as HTMLLabelElement;
+      if (label?.tagName === "LABEL") label.scrollIntoView(true);
+      else e.scrollIntoView(true);
     });
   },
 };
