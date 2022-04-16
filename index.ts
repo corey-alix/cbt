@@ -16,6 +16,7 @@ function on(eventName: string, cb: (detail?: any) => void) {
 }
 
 export function run() {
+  autoForLabel();
   applyBehaviors();
   applyTriggers();
 
@@ -142,4 +143,15 @@ function gotoNextFocusable(element: HTMLElement) {
       break;
     }
   }
+}
+
+function autoForLabel() {
+  const labels = Array.from(
+    document.querySelectorAll("label")
+  ) as HTMLLabelElement[];
+  labels.forEach((label) => {
+    const input = label.nextElementSibling as HTMLInputElement;
+    if (!input || !input.id) return;
+    label.setAttribute("for", input.id);
+  });
 }
