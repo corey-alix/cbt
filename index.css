@@ -64,7 +64,7 @@ textarea {
 
 .wizard {
   display: grid;
-  grid-template-columns: auto auto auto 1rem;
+  grid-template-columns: 1rem auto auto auto 1rem;
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -75,19 +75,19 @@ textarea {
 }
 
 .wizard-step {
-  grid-column: 1/4;
+  grid-column: 2/5;
 }
 
 .col1 {
-  grid-column: 1;
-}
-
-.col2 {
   grid-column: 2;
 }
 
-.col3 {
+.col2 {
   grid-column: 3;
+}
+
+.col3 {
+  grid-column: 4;
 }
 
 .yesorno {
