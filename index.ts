@@ -1,3 +1,6 @@
+// import { register } from "./components/question.js";
+// register();
+
 function showArea(areas: HTMLElement[], currentStep: number) {
   areas.forEach((e, i) => e.classList.toggle("hidden", i !== currentStep));
   gotoNextFocusable(document.activeElement as HTMLElement);

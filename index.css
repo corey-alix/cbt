@@ -26,11 +26,11 @@ body {
 }
 
 .large.input {
-  height: calc(40vh);
+  height: min(10rem, 40vh);
 }
 
 .small.input {
-  height: calc(20vh);
+  height: min(5rem, 20vh);
 }
 
 .button {

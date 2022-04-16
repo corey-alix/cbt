@@ -10,167 +10,166 @@
     <form class="wizard">
       <step class="wizard-step">
         <label class="question" for="situation">What Happened?</label>
-          <textarea
-            class="large input tab-on-enter"
-            id="situation"
-            placeholder="What happened?"
-          ></textarea>
-        </label>
-        <label class="question" for="situation-where">Where did this happen?</label>  
-          <textarea
-            class="small input tab-on-enter"
-            id="situation-where"
-            placeholder="Where did this happen?"
-          ></textarea>
-        <label class="question" 
-          >When did this happen?
-          <textarea
-            class="small input scroll-to-top tab-on-enter"
-            id="situation-when"
-            placeholder="When did this happen?"
-          ></textarea>
-        </label>
-        <label for="situation-whom" class="question" 
-          >With whom did this happen?</label>
-          <textarea
-            class="small input scroll-to-top tab-on-enter"
-            id="situation-whom"
-            placeholder="With whom did this happen?"
-          ></textarea>
-        
-        <label class="question" 
-          >How did this happen?
-          <textarea
-            class="large input scroll-to-top tab-on-enter"
-            id="situation-how"
-            placeholder="How did this happen?"
-          ></textarea>
-        </label>
+        <textarea class="large input scroll-to-top tab-on-enter" id="situation"></textarea>
+        <label class="question" for="situation-where"
+          >Where did this happen?</label
+        >
+        <textarea
+          class="small input scroll-to-top tab-on-enter"
+          id="situation-where"
+        ></textarea>
+        <label class="question">When did this happen?</label>
+        <textarea
+          class="small input scroll-to-top tab-on-enter"
+          id="situation-when"
+        ></textarea>
+
+        <label for="situation-whom" class="question"
+          >With whom did this happen?</label
+        >
+        <textarea
+          class="small input scroll-to-top tab-on-enter"
+          id="situation-whom"
+        ></textarea>
+
+        <label class="question">How did this happen?</label>
+        <textarea
+          class="large input scroll-to-top tab-on-enter"
+          id="situation-how"
+        ></textarea>
       </step>
       <step class="wizard-step">
-        <label class="question" 
-          >how intense was the mood?
-          <input
-            class="fill-width"
-            id="mood-intensity"
-            type="range"
-            min="1"
-            max="10"
-            value="1"
-        /></label>
-        <label class="question" for="mode">What emotions did you feel at that time?</label>
+        <label class="question">how intense was the mood?</label>
+        <input
+          class="fill-width"
+          id="mood-intensity"
+          type="range"
+          min="1"
+          max="10"
+          value="1"
+        />
+        <label class="question" for="mode"
+          >What emotions did you feel at that time?</label
+        >
         <textarea
           class="large input scroll-to-top tab-on-enter"
           id="mood"
-          placeholder="What emotions did you feel at that time?"
         ></textarea>
+        <label class="question">What else did you feel?</label>
         <textarea
           class="small input scroll-to-top tab-on-enter"
           id="mood-other"
-          placeholder="What else did you feel?"
         ></textarea>
+        <label class="question"
+          >What did you notice in your body? Where did you feel it?</label
+        >
         <textarea
           class="small input scroll-to-top tab-on-enter"
           id="sensation"
-          placeholder="What did you notice in your body?  Where did you feel it?"
         ></textarea>
       </step>
       <step class="wizard-step">
-        <label  class="question" for="reaction">What went through your mind?</label>
+        <label class="question" for="reaction"
+          >What went through your mind?</label
+        >
         <textarea
-          class="small input tab-on-enter"
+          class="small input scroll-to-top tab-on-enter"
           id="reaction-mind"
-          placeholder="What went through your mind?"
         ></textarea>
+        <label class="question">What disturbed me?</label>
         <textarea
-          class="small input"
+          class="small input scroll-to-top tab-on-enter"
           id="reaction-disturbance"
-          placeholder="What disturbed me?"
         ></textarea>
+        <label class="question"
+          >What did those thoughts mean to you or say about you or the
+          situation? What are you responding to?</label
+        >
         <textarea
-          class="small input"
+          class="small input scroll-to-top tab-on-enter"
           id="reaction-interpretation"
-          placeholder="What did those thoughts mean to you or say about you or the situation? What are you responding to?"
         ></textarea>
       </step>
       <step class="wizard-step">
+        <label class="question">What 'button' is this pressing for you?</label>
         <textarea
-          class="small input"
+          class="small input scroll-to-top tab-on-enter"
           id="reaction-trigger"
-          placeholder="
-What 'button' is this pressing for you?
-        "
         ></textarea>
       </step>
       <step class="wizard-step">
+        <label class="question"
+          >What would be the worst thing that could happen?</label
+        >
         <textarea
-          class="large input"
+          class="large input scroll-to-top tab-on-enter"
           id="reaction-worstcasescenario"
-          placeholder="
-What would be the worst thing that could happen?
-        "
         ></textarea>
       </step>
       <step class="wizard-step">
+        <label
+          >Take a breath...is this fact or opinion? What would someone else say
+          about this situation? What is the bigger picture? Is there another way
+          of seeing it? What advice would you give someone else?
+        </label>
         <textarea
-          class="large input"
+          class="large input scroll-to-top tab-on-enter"
           id="reinterpretation"
-          placeholder="
-Take a breath...is this fact or opinion? 
-What would someone else say about this situation?  
-What is the bigger picture?
-Is there another way of seeing it?
-What advice would you give someone else?
-        "
         ></textarea>
-        <label class="yesorno yes">
+        <div class="yesorno yes">
+          <label class="question"
+            >Is this reaction in proportion to the actual event?</label
+          >
           <input
-            class="checkbox"
+            class="checkbox scroll-to-top tab-on-enter"
             type="checkbox"
             id="overreacted"
             checked="true"
             data-trigger="yesorno-toggler"
-          />Is this reaction in proportion to the actual event?
+          />
           <textarea
-            class="if-yes large input"
+            class="if-yes large input scroll-to-top tab-on-enter"
             id="important"
             placeholder="Explain why."
           ></textarea>
-        </label>
-        <label class="yesorno yes">
+        </div>
+        <div class="yesorno yes">
+          <label class="question"
+            >Is this really as important as it seems?</label
+          >
           <input
-            class="checkbox"
+            class="checkbox scroll-to-top tab-on-enter"
             type="checkbox"
             id="overreacted"
             checked="true"
             data-trigger="yesorno-toggler"
-          />Is this really as important as it seems? <br />
+          />
           <textarea
-            class="if-yes large input"
+            class="if-yes large input scroll-to-top tab-on-enter"
             id="important"
             placeholder="Explain why it was so important."
           ></textarea>
-        </label>
-        <label class="yesorno no">
+        </div>
+        <div class="yesorno no">
+          <label class="question">Is there another way of seeing it?</label>
           <input
-            class="checkbox"
+            class="checkbox scroll-to-top tab-on-enter"
             type="checkbox"
             id="alternative-view-exists"
             data-trigger="yesorno-toggler"
-          />Is there another way of seeing it? <br />
+          />
           <textarea
-            class="if-yes large input"
+            class="if-yes large input scroll-to-top tab-on-enter"
             id="alternative-view"
             placeholder="What is it?"
           ></textarea>
-        </label>
+        </div>
       </step>
       <step class="wizard-step">
-        <textarea
-          class="large input"
-          id="outcome"
-          placeholder="What could you do differently? What would be more effective?"
-        ></textarea>
+        <label
+          >What could you do differently? What would be more effective?</label
+        >
+        <textarea class="large input scroll-to-top tab-on-enter" id="outcome"></textarea>
       </step>
       <br />
       <input
@@ -180,7 +179,7 @@ What advice would you give someone else?
         data-trigger="prior-area"
       />
       <input
-        class="button tab-on-enter"
+        class="button scroll-to-top tab-on-enter"
         type="button"
         value="Next"
         data-trigger="next-area"
