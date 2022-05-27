@@ -1,11 +1,27 @@
-const questions = [
+export const questions = [
+  {
+    id: "situation",
+    q: "What happened?",
+  },
+  {
+    id: "situation-where",
+    q: "Where did this happen?",
+  },
+  {
+    id: "situation-when",
+    q: "When did this happen?",
+  },
+  {
+    id: "situation-whom",
+    q: "With whom did this happen?",
+  },
   {
     id: "situation-how",
     q: "How did this happen?",
   },
   {
     id: "mood-intensity",
-    q: "how intense was the mood?",
+    q: "How intense was the mood?",
   },
   {
     id: "mood",
@@ -25,7 +41,7 @@ const questions = [
   },
   {
     id: "reaction-disturbance",
-    q: "What disturbed me?",
+    q: "What disturbed you?",
   },
   {
     id: "reaction-interpretation",
@@ -48,36 +64,39 @@ const questions = [
     q: "What would someone else say about this situation? What is the bigger picture?",
   },
   {
-    id: "reinterpretation-alternative",
-    q: "Is there another way of seeing it?",
-  },
-  {
     id: "reinterpretation-advice",
     q: "What advice would you give someone else?",
   },
   {
     id: "overreacted-event",
     q: "Is this reaction in proportion to the actual event?",
-    followup: {
-      id: "important",
-      q: "Explain why.",
-    },
+    followup: [
+      {
+        id: "important",
+        q: "Explain why.",
+      },
+    ],
   },
   {
     id: "overreacted-importance",
     q: "Is this really as important as it seems?",
-    followup: {
-      id: "important",
-      q: "Explain why it was so important.",
-    },
+    followup: [
+      {
+        id: "important",
+        q: "Explain why it was so important.",
+      },
+    ],
   },
   {
     id: "alternative-view-exists",
     q: "Is there another way of seeing it?",
-    followup: {
-      id: "alternative-view",
-      q: "What is it?",
-    },
+    default: true,
+    followup: [
+      {
+        id: "alternative-view",
+        q: "What is it?",
+      },
+    ],
   },
   {
     id: "outcome",

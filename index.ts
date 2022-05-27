@@ -1,5 +1,4 @@
-// import { register } from "./components/question.js";
-// register();
+import { questions } from "./data/questions.js";
 
 function showArea(areas: HTMLElement[], currentStep: number) {
   areas.forEach((e, i) => e.classList.toggle("hidden", i !== currentStep));
@@ -16,6 +15,7 @@ function on(eventName: string, cb: (detail?: any) => void) {
 }
 
 export function run() {
+  buildForm();
   autoForLabel();
   applyBehaviors();
   applyTriggers();
@@ -154,4 +154,85 @@ function autoForLabel() {
     if (!input || !input.id) return;
     label.setAttribute("for", input.id);
   });
+}
+
+class FormGen {
+  constructor(private form: HTMLFormElement) {}
+
+  render() {
+    const target = this.form.querySelector("#questions-go-here");
+    // <step class="wizard-step">
+    questions.forEach((question) => {
+      const step = this.createStep();
+      this.form.insertBefore(step, target);
+      const label = this.createLabel(question);
+
+      if (question.followup) {
+        // <div class="yesorno yes">
+        const yesorno = document.createElement("div");
+        yesorno.classList.add(
+          "yesorno",
+          true === question.default ? "yes" : "no"
+        );
+        step.appendChild(yesorno);
+        yesorno.appendChild(label);
+        const checkbox = document.createElement("input");
+        checkbox.classList.add("checkbox", "scroll-to-top", "tab-on-enter");
+        checkbox.type = "checkbox";
+        checkbox.id = question.id;
+        checkbox.checked = !!question.default;
+        checkbox.dataset.trigger = "yesorno-toggler";
+        yesorno.appendChild(checkbox);
+        const inputs = this.renderFollowup(question.followup, yesorno);
+        inputs.forEach((input) => input.classList.add("if-yes"));
+      } else {
+        step.appendChild(label);
+        const input = this.createInput(question);
+        step.appendChild(input);
+      }
+    });
+  }
+  private createInput(question: {
+    id: string;
+    q: string;
+    followup?: undefined;
+  }) {
+    const input = document.createElement("textarea");
+    input.classList.add(..."large input scroll-to-top tab-on-enter".split(" "));
+    input.setAttribute("id", question.id);
+    input.setAttribute("name", question.id);
+    input.setAttribute("placeholder", question.q);
+    return input;
+  }
+
+  renderFollowup(
+    questions: Array<{ id: string; q: string }>,
+    container: HTMLElement
+  ) {
+    return questions.map((question) => {
+      const input = this.createInput(question);
+      container.appendChild(input);
+      return input;
+    });
+  }
+
+  private createLabel(question: { id: string; q: string }) {
+    const label = document.createElement("label");
+    label.setAttribute("for", question.id);
+    label.classList.add("question");
+    label.innerText = question.q;
+    return label;
+  }
+
+  private createStep() {
+    const step = document.createElement("step");
+    step.classList.add("wizard-step");
+    return step;
+  }
+}
+
+function buildForm() {
+  const form = document.querySelector("form.wizard") as HTMLFormElement;
+  const formGen = new FormGen(form);
+  formGen.render();
 }
