@@ -174,7 +174,7 @@ const Notes = [
 export function run() {
   const topicInput = forceElement<HTMLInputElement>(
     "topic",
-    `<input type="text" placeholder="Topic" />`
+    `<input class="small input" type="text" placeholder="Topic" />`
   )
 
   topicInput.focus()
