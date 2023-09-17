@@ -39,6 +39,54 @@ const Bible: BibleType = {
       },
     },
   },
+  Deuteronomy: {
+    chapters: {
+      1: {
+        verses: {
+          1: "These are the words Moses spoke to all Israel in the wilderness east of the Jordan - that is, in the Arabah - opposite Suph, between Paran and Tophel, Laban, Hazeroth and Dizahab.",
+        },
+      },
+    },
+  },
+  Joshua: {
+    chapters: {
+      1: {
+        verses: {
+          1: "After the death of Moses the servant of the Lord, the Lord said to Joshua son of Nun, Moses’ aide:",
+        },
+      },
+    },
+  },
+  Judges: {
+    chapters: {
+      1: {
+        verses: {
+          1: "After the death of Joshua, the Israelites asked the Lord, “Who of us is to go up first to fight against the Canaanites?”",
+        },
+      },
+    },
+  },
+  Ruth: {
+    chapters: {
+      1: {
+        verses: {
+          1: "In the days when the judges ruled, there was a famine in the land. So a man from Bethlehem in Judah, together with his wife and two sons, went to live for a while in the country of Moab.",
+          17: "Where you die I will die, and there I will be buried. May the Lord deal with me, be it ever so severely, if even death separates you and me.",
+        },
+      },
+    },
+  },
+  "1 Samuel": {
+    chapters: {
+      1: {
+        verses: {
+          1: "There was a certain man from Ramathaim, a Zuphite from the hill country of Ephraim, whose name was Elkanah son of Jeroham, the son of Elihu, the son of Tohu, the son of Zuph, an Ephraimite.",
+          5: "But to Hannah he gave a double portion because he loved her, and the Lord had closed her womb.",
+          11: "And she made a vow, saying, “Lord Almighty, if you will only look on your servant’s misery and remember me, and not forget your servant but give her a son, then I will give him to the Lord for all the days of his life, and no razor will ever be used on his head.”",
+        },
+      },
+    },
+  },
 } as const
 
 type BookName = keyof typeof Bible
@@ -67,6 +115,54 @@ const Notes = [
     book: "Numbers",
     verse: "1:1",
     note: "God speaks to Moses about organizing armies - God expects us to do our part even when we feel inadequate.",
+  },
+  {
+    topic: "History",
+    book: "Deuteronomy",
+    verse: "1:1",
+    note: "Know your story and know yourself. Be specific and be able to share the story well for future generations to hear.",
+  },
+  {
+    topic: "Strength Courage",
+    book: "Joshua",
+    verse: "1:1",
+    note: "God now speaks with Joshua, stressing the importance of knowing His word intimately.",
+  },
+  {
+    topic: "Judgement Disobedience Forgetfulness",
+    book: "Judges",
+    verse: "1:1",
+    note: "God is not speaking first, but the Israelites ask God who should go first to fight the Canaanites. It does not mention any other inquiries as the other tribes go.",
+  },
+  {
+    topic: "Family",
+    book: "Ruth",
+    verse: "1:1",
+    note: "Naomi wanted what was best for Ruth and that is why Ruth loved her so deeply.",
+  },
+  {
+    topic: "Love",
+    book: "Ruth",
+    verse: "1:17",
+    note: "Ruth's love for Naomi is poetically deep. Have can you earn such love?  By being a good friend and loving others.",
+  },
+  {
+    topic: "History",
+    book: "1 Samuel",
+    verse: "1:1",
+    note: "The story of Samuel begins with his father's love for Hannah.",
+  },
+  {
+    topic: "Compassion",
+    book: "1 Samuel",
+    verse: "1:5",
+    note: "Show people that you love them.",
+  },
+  {
+    topic: "Purpose Destiny",
+    book: "1 Samuel",
+    verse: "1:11",
+    note: "Hannah is asking for a purpose. She intuitively knows that she is meant to have a child and the unfulfilled longing is deep anguish.",
   },
 ] as Array<{
   topic: string
