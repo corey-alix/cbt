@@ -88,6 +88,19 @@ export function run() {
   topicInput.addEventListener("input", () => {
     renderTopic(topicInput.value)
   })
+
+  // turn the topic into a dropdown of topics
+  const topics = Notes.map((n) => n.topic).filter(
+    (t, i, a) => a.indexOf(t) === i
+  )
+  const topicItems = topics
+    .map((t) => `<option value="${t}">${t}</option>`)
+    .join("")
+  const datalist = asHtml<HTMLDataListElement>(
+    `<datalist id="topics">${topicItems}</datalist>`
+  )
+  topicInput.setAttribute("list", "topics")
+  topicInput.parentNode?.insertBefore(datalist, topicInput.nextSibling)
 }
 
 function showBibleVerse(book: BookName, chapterVerse: string) {
