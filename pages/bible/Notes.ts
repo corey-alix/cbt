@@ -84,6 +84,6 @@ export const Notes = [
     topic: "Life",
     book: "2 Samuel",
     verse: "1:1",
-    note: "David was lethal yet retained sensitivity toward Saul. Hard but not hardened. He will do wrong but was not be destroyed by it. Life for God regardless of your failures.",
+    note: "David was lethal yet retained sensitivity toward Saul. Hard but not hardened, he will do wrong but not be destroyed by it. Live in the sight of God and own your failures.",
   },
 ] as Array<Note>
