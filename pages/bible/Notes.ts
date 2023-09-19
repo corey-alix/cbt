@@ -86,4 +86,10 @@ export const Notes = [
     verse: "1:1",
     note: "David was lethal yet retained sensitivity toward Saul. Hard but not hardened, he will do wrong but not be destroyed by it. Live in the sight of God and own your failures.",
   },
+  {
+    topic: "Urgency",
+    book: "1 Kings",
+    verse: "1:1",
+    note: "David is old and cold.  Even great men die feeble. Do not waste your health.",
+  },
 ] as Array<Note>

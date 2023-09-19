@@ -97,4 +97,13 @@ export const Bible: BibleType = {
       },
     },
   },
+  "1 Kings": {
+    chapters: {
+      1: {
+        verses: {
+          1: "When King David was very old, he could not keep warm even when they put covers over him.",
+        },
+      },
+    },
+  },
 } as const
