@@ -1,4 +1,4 @@
-export { run as bible } from "./pages/bible.js"
+export { run as bible } from "./pages/bible/index.js"
 import { questions } from "./data/questions.js"
 
 function showArea(areas: HTMLElement[], currentStep: number) {
