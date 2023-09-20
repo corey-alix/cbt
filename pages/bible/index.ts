@@ -30,8 +30,34 @@ export function run() {
   topicInput.parentNode?.insertBefore(datalist, topicInput.nextSibling)
 }
 
+function convertChapterVerseStringToChapterVerseArray(chapterVerse: string) {
+  const result = [] as Array<{ chapter: number; verse: number }>
+  // convert "1:1" to [{chapter:1, verse:1}]
+  // convert "1:1-2" to [{chapter:1, verse:1}, {chapter:1, verse:2}]
+  // convert "1:1-2:3" to [{chapter:1, verse:1}, {chapter:2, verse:3}]
+  const [start, end] = chapterVerse.split("-")
+  const [startChapter, startVerse] = start.split(":").map((n) => parseInt(n))
+  result.push({ chapter: startChapter, verse: startVerse })
+  if (!end) return result
+  const [endChapter, endVerse] = end.split(":").map((n) => parseInt(n))
+  if (!endVerse) {
+    result.push({ chapter: startChapter, verse: endChapter })
+  } else {
+    result.push({ chapter: endChapter, verse: endVerse })
+  }
+  return result
+}
+
 function showBibleVerse(book: BookName, chapterVerse: string) {
-  const [chapter, verse] = chapterVerse.split(":").map((n) => parseInt(n))
+  const refs = convertChapterVerseStringToChapterVerseArray(chapterVerse)
+  return refs.map((ref) => getBibleVerseRef(book, ref)).join(" ")
+}
+
+function getBibleVerseRef(
+  book: BookName,
+  ref: { chapter: number; verse: number }
+) {
+  const { chapter, verse } = ref
   return Bible[book].chapters[chapter].verses[verse]
 }
 

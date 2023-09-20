@@ -93,6 +93,7 @@ export const Bible: BibleType = {
       1: {
         verses: {
           1: "After the death of Saul, David returned from striking down the Amalekites and stayed in Ziklag two days.",
+          2: "On the third day a man arrived from Saul’s camp with his clothes torn and dust on his head. When he came to David, he fell to the ground to pay him honor.",
         },
       },
     },
@@ -120,6 +121,12 @@ export const Bible: BibleType = {
       1: {
         verses: {
           1: "Adam, Seth, Enosh...",
+        },
+      },
+      2: {
+        verses: {
+          1: "These are the sons of Israel: Reuben, Simeon, Levi, Judah, Issachar, Zebulun,",
+          2: "Dan, Joseph, Benjamin, Naphtali, Gad and Asher.",
         },
       },
     },

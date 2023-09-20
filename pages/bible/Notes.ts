@@ -83,7 +83,7 @@ export const Notes = [
   {
     topic: "Life",
     book: "2 Samuel",
-    verse: "1:1",
+    verse: "1:1-2",
     note: "David was lethal yet retained sensitivity toward Saul. Hard but not hardened, he will do wrong but not be destroyed by it. Live in the sight of God and own your failures.",
   },
   {
@@ -103,6 +103,12 @@ export const Notes = [
     book: "1 Chronicles",
     verse: "1:1",
     note: "Identifying the family tree beginning with Adam.",
+  },
+  {
+    topic: "History",
+    book: "1 Chronicles",
+    verse: "2:1-2:2",
+    note: "Jacob's sons.",
   },
   {
     topic: "Greatness",
