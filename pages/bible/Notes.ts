@@ -92,4 +92,22 @@ export const Notes = [
     verse: "1:1",
     note: "David is old and cold.  Even great men die feeble. Do not waste your health.",
   },
+  {
+    topic: "Pride",
+    book: "2 Kings",
+    verse: "1:1",
+    note: "Seeing God's punishment for outrageous, blatant pride does not create a fear of the Lord.",
+  },
+  {
+    topic: "History",
+    book: "1 Chronicles",
+    verse: "1:1",
+    note: "Identifying the family tree beginning with Adam.",
+  },
+  {
+    topic: "Greatness",
+    book: "2 Chronicles",
+    verse: "1:1",
+    note: "Do not let Solomon's excesses offend; God makes Solomon great.",
+  },
 ] as Array<Note>

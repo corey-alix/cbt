@@ -106,4 +106,31 @@ export const Bible: BibleType = {
       },
     },
   },
+  "2 Kings": {
+    chapters: {
+      1: {
+        verses: {
+          1: "After Ahab's death, Moab rebelled against Israel.",
+        },
+      },
+    },
+  },
+  "1 Chronicles": {
+    chapters: {
+      1: {
+        verses: {
+          1: "Adam, Seth, Enosh...",
+        },
+      },
+    },
+  },
+  "2 Chronicles": {
+    chapters: {
+      1: {
+        verses: {
+          1: "Solomon son of David established himself firmly over his kingdom, for the Lord his God was with him and made him exceedingly great.",
+        },
+      },
+    },
+  },
 } as const
