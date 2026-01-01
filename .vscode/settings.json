@@ -8,5 +8,11 @@
   "chat.promptFilesLocations": {
     ".github/prompts": true,
     "./.promptpress/prompts": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    ".promptpress": true
   }
 }
