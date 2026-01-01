@@ -1,7 +1,7 @@
 ---
 artifact: cbt
 phase: design
-depends-on: []
+depends-on: [cbt.req]
 references: []
 last-updated: 2025-12-31
 ---
