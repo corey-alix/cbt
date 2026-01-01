@@ -1,5 +1,12 @@
 {
   "liveServer.settings.port": 5002,
   "liveServer.settings.wait": 1000,
-  "cSpell.words": ["Ramathaim", "Zuphite"]
+  "cSpell.words": [
+    "Ramathaim",
+    "Zuphite"
+  ],
+  "chat.promptFilesLocations": {
+    ".github/prompts": true,
+    "./.promptpress/prompts": true
+  }
 }

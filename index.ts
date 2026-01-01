@@ -15,6 +15,7 @@ function on(eventName: string, cb: (detail?: any) => void) {
   document.addEventListener(eventName, (e) => cb((<any>e).detail || null))
 }
 
+// cbt/IMP-1000
 export function run() {
   buildForm()
   autoForLabel()
