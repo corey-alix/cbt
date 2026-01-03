@@ -4,6 +4,7 @@ description: This prompt is used to tersify requirement specification documents 
 model: Grok Code Fast 1 (copilot)
 tools: [read, edit]
 ---
+
 The purpose of this task is to eliminate duplicate information across spec documents and ensure that details about a given entity are mentioned only in the spec document dedicated to that entity, maintaining a single source of truth.
 
 For the given requirement spec source document, identify all other spec documents it references in the references section, which looks like this example:

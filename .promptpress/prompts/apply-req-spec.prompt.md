@@ -18,5 +18,4 @@ description: This prompt refactors a requirement specification document by synch
 
 POST-PROCESSING:
 
-Re-evaluate the `Overview` section for excessive wording or unnecessary claims.  It should be concise and focused on summarizing the requirements without extraneous information.
----
+## Re-evaluate the `Overview` section for excessive wording or unnecessary claims. It should be concise and focused on summarizing the requirements without extraneous information.

@@ -29,6 +29,7 @@ Given a requirements feature request ID (FR-XXXX) and user-provided context desc
 Add the new design element in the Components section using this format (adjust section as appropriate):
 
 ### <ComponentName> (DES-XXXX)
+
 - **Description**: [High-level responsibilities and role, derived from FR and user context]
 - **Type**: [Class, Interface, etc. - infer from context]
 - **Key Methods**: [Generalized list of public methods - infer from context]

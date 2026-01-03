@@ -29,6 +29,7 @@ Given a user prompt describing a new feature request, the AI must:
 Add the new requirement in the Functional Requirements section using this exact format:
 
 ### FR-XXXX
+
 - **Description**: [High-level description derived from the user prompt]
 - **Priority**: [High/Medium/Low - infer based on feature criticality]
 - **Dependencies**: [Related components or data models - infer from context]

@@ -3,6 +3,7 @@
 PromptPress is a VS Code extension that enables prompt-driven development by maintaining AI prompts as persistent, versioned Markdown specifications. It follows an SDLC with Requirements (.req.md), Design (.design.md), and Implementation (.impl.md) phases stored in the `specs/` directory. The extension monitors file changes, uses AI (primarily xAI) to refine specs, and generates code from implementation specs.
 
 Key components:
+
 - **File Watchers** (`src/watchers/`): Monitor `specs/` for changes
 - **AI Client** (`src/ai/xaiClient.ts`): Handles xAI API interactions
 - **Parsers** (`src/parsers/`): Parse markdown specs and file structures
@@ -28,6 +29,7 @@ specs/
 ```
 
 ### Tracing Specification Intent
+
 - **Intra-Spec Linking**: Use qualified links like `@artifact.phase/SPEC-ID` (e.g., `@promptpress.req/FR-1000`) or unqualified SPEC-ID assuming the current artifact and appropriate phase. Phase rules: Requirements cannot reference design or implementation; design cannot reference implementation; implementation can reference design and requirements.
 - **Code to Specs**: Embed comments in code like `// artifact/SPEC-ID` (e.g., `// promptpress/IMP-1000`) to link methods/classes to implementation specs. The `resolveSpecFilePath` function in `specLinkUtils.ts` parses these to locate the spec file and section.
 - **Specs to Code**: Implementation specs list IMP-IDs under DES-IDs (e.g., `### DES-1014: XAIClient - IMP-1000: chat`), describing file structures in tree format. This maps specs directly to generated code.

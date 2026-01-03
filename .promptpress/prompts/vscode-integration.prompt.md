@@ -21,19 +21,19 @@ The specs folder includes the following file types:
 
 ## Auto Completion
 
-In addition to error and warning reporting, the extension should provide auto-completion suggestions when editing depends-on and references arrays, as well as when typing "@" mentions in the file content.  The suggestions should include all valid files in the workspace that match the expected file types (.req, .design, .impl) as well as the ConOps.md file.
+In addition to error and warning reporting, the extension should provide auto-completion suggestions when editing depends-on and references arrays, as well as when typing "@" mentions in the file content. The suggestions should include all valid files in the workspace that match the expected file types (.req, .design, .impl) as well as the ConOps.md file.
 
 Rules include:
 
 - do not show the current document in suggestions
 - do not show files that would create circular dependencies in depends-on suggestions
-- do not show *.impl files
-- do not show *.design files when editing a .req file
+- do not show \*.impl files
+- do not show \*.design files when editing a .req file
 - in ConOps.md, only show .req files
 
 ## Unit Testing
 
-You should ensure unit tests remain in place that verify these conditions are correctly reported as IDE warnings.  This includes adding new unit tests if necessary.  All such tests should be invoked using `test:ide` npm script.
+You should ensure unit tests remain in place that verify these conditions are correctly reported as IDE warnings. This includes adding new unit tests if necessary. All such tests should be invoked using `test:ide` npm script.
 
 Tests should exist to ensure the Auto Completion rules are followed.
 

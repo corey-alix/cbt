@@ -13,9 +13,9 @@ Please follow these explicit steps to update the unit tests:
 4. After updating the tests, locate the last git commit hash you used to identify the changes.
 5. Add this commit hash as a comment at the top of the file ./prompt-press/src/test/runner.ts in the following format:
 
-	```
-	// Last commit hash for test updates: {commit_hash}
-	```
+    ```
+    // Last commit hash for test updates: {commit_hash}
+    ```
 
 6. Use that commit hash as a starting point when observing the git history for future test updates.
 7. Ensure that all updated tests pass successfully.

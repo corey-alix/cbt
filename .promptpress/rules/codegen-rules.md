@@ -14,9 +14,12 @@ This document governs code generation. Follow these rules for consistent outcome
 - Generate helper commands for testing if needed.
 - After lint passes and all tests pass, create a test for the new functionality.
 - Classify the test as:
-  - parser: markup/code processing
-  - core: low-level utilities (strings, math, filesystem)
+    - parser: markup/code processing
+    - core: low-level utilities (strings, math, filesystem)
 - Output full console to output window.
 - Prefer using existing library methods and utilities over implementing custom logic to maintain consistency, reduce errors, and avoid code duplication.
 - Use `SpecTypeMapper` from `src/spec/specTypeMapper.ts` for all spec type, folder, file extension, and REFID prefix mappings. Do not hardcode these relationships elsewhere in the codebase.
 - For regex expressions, define them in `RegexHelper` class with meaningful names, write tests in `src/test/regexHelper.test.ts`, and reference in business logic.
+- Use `import type` for type-only imports in TypeScript to improve tree-shaking and avoid unnecessary runtime dependencies.
+- Always use unix paths in code but assume it could be running on windows. Always convert unknown paths to unix format before comparing them.
+- Use the `normalizeFileName` function from `src/utils/normalizeFileName.ts` to convert paths to unix format.
