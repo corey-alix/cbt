@@ -1,10 +1,10 @@
 ---
 artifact: cbt
 phase: implementation
-depends-on: [cbt.design]
+depends-on: ["cbt.design"]
 references: []
-last-updated: 2025-12-31
-last-spec-id: IMP-1001
+last-updated: 2026-01-03
+last-spec-id: IMP-1010
 ---
 
 # Implementation Specification for cbt
@@ -14,8 +14,23 @@ cbt is a cognitive brain training web experience. It guides users through a CBT 
 
 ## Design Requirements
 
+### DES-1000: CBT Question Set
+- IMP-1003: questions
+
+### DES-1001: Bible Scripture Data
+- IMP-1005: Bible
+- IMP-1006: VerseType
+- IMP-1007: ChapterType
+- IMP-1008: BibleType
+- IMP-1009: BookName
+
+### DES-1002: Topic Notes Index
+- IMP-1004: Notes
+- IMP-1010: Note
+
 ### DES-1003: Wizard Form Engine
 - IMP-1000: run
+- IMP-1002: FormGen
 
 ### DES-1004: Topic Input Filter
 - IMP-1001: run
@@ -30,7 +45,7 @@ cbt is a cognitive brain training web experience. It guides users through a CBT 
 ## Files
 ### File: index.ts
 - **Purpose**: Initialize and run the CBT wizard UI, bind behaviors, and persist responses.
-- **Classes**: FormGen
+- **Classes**: FormGen (IMP-1002)
 - **Interfaces**: None
 - **Methods**: run (IMP-1000)
 - **Other Elements**: behaviors map; helper functions applyTriggers, applyBehaviors, getFormData, gotoNextFocusable, autoForLabel, buildForm
@@ -47,24 +62,28 @@ cbt is a cognitive brain training web experience. It guides users through a CBT 
 - **Classes**: None
 - **Interfaces**: None
 - **Methods**: None
-- **Other Elements**: questions constant
+- **Models**: questions (IMP-1003)
+- **Other Elements**: None
 
 ### File: pages/bible/Bible.ts
 - **Purpose**: Supply Bible excerpt data keyed by book, chapter, and verse along with supporting types.
 - **Classes**: None
 - **Interfaces**: None
 - **Methods**: None
-- **Other Elements**: VerseType, ChapterType, BibleType, BookName types; Bible constant
+- **Models**: Bible (IMP-1005)
+- **Other Elements**: VerseType (IMP-1006), ChapterType (IMP-1007), BibleType (IMP-1008), BookName (IMP-1009)
 
 ### File: pages/bible/Notes.ts
 - **Purpose**: Provide topical verse notes tied to books and chapter:verse references.
 - **Classes**: None
 - **Interfaces**: None
 - **Methods**: None
-- **Other Elements**: Notes constant; Note type (internal)
+- **Models**: Notes (IMP-1004)
+- **Other Elements**: Note (IMP-1010)
 
 ## Classes
-### FormGen
+
+### FormGen (IMP-1002)
 - **Description**: Helper that renders wizard steps, labels, and inputs based on the questions data set.
 - **Inheritance**: None
 - **Properties**: form: HTMLFormElement
@@ -78,22 +97,45 @@ cbt is a cognitive brain training web experience. It guides users through a CBT 
 None
 
 ## Other Types
-- VerseType: Record<number, string>
-- ChapterType: Record<number, { verses: VerseType }>
-- BibleType: Record<string, { chapters: ChapterType }>
-- BookName: keyof typeof Bible
-- Note: { topic: string; book: BookName; verse: string; note: string }
+
+### VerseType (IMP-1006)
+Record<number, string>
+
+### ChapterType (IMP-1007)
+Record<number, { verses: VerseType }>
+
+### BibleType (IMP-1008)
+Record<string, { chapters: ChapterType }>
+
+### BookName (IMP-1009)
+keyof typeof Bible
+
+### Note (IMP-1010)
+{ topic: string; book: BookName; verse: string; note: string }
 
 ## Models
-- questions: ordered collection of CBT prompts and optional follow-up prompts.
-- Notes: topical verse notes referencing BookName and chapter:verse strings.
-- Bible: static excerpt data organized by book, chapter, and verse.
+
+### questions (IMP-1003)
+- **Description**: ordered collection of CBT prompts and optional follow-up prompts.
+- **Belongs to**: data/questions.ts
+- **Properties**: None
+- **Fields**: None
+- **Constructors**: None
+- **Events**: None
+- **Nested Types**: None
+
+### Notes (IMP-1004)
+- **Description**: topical verse notes referencing BookName and chapter:verse strings.
+- **Belongs to**: pages/bible/Notes.ts
+
+### Bible (IMP-1005)
+- **Description**: static excerpt data organized by book, chapter, and verse.
+- **Belongs to**: pages/bible/Bible.ts
 
 ## Methods
 ### run (IMP-1000)
 - **Belongs to**: index.ts
 - **Description**: Initializes CBT wizard behaviors, wires navigation triggers, persists responses, and transitions to the summary page after completion.
-- **Parameters**: None
 - **Return Type**: void
 - **Algorithm**:
   - Build the form structure via buildForm, ensure labels have matching for attributes via autoForLabel, and wire behaviors and triggers.
@@ -125,3 +167,6 @@ None
 ## Notes
 - DOM structure must provide expected elements (wizard form, grid containers) for helper functions to operate correctly.
 - LocalStorage keys cbt-db and topic are used for persistence; clearing storage resets saved progress and topic prefill.
+
+## Tests
+- No tests defined yet.

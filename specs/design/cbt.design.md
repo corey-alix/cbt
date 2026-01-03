@@ -1,9 +1,9 @@
 ---
 artifact: cbt
 phase: design
-depends-on: [cbt.req]
+depends-on: ["cbt.req"]
 references: []
-last-updated: 2025-12-31
+last-updated: 2026-01-03
 ---
 
 # Design Specification for cbt
@@ -15,7 +15,7 @@ cbt is a cognitive brain training web experience comprising two primary features
 
 Key design elements:
 - Data Models: CBT Question Set (DES-1000), Bible Scripture Data (DES-1001), Topic Notes Index (DES-1002)
-- Components: Wizard Form Engine (DES-1000), Topic Input Filter (DES-1001)
+- Components: Wizard Form Engine (DES-1003), Topic Input Filter (DES-1004)
 - Dependencies: DOM APIs, localStorage, static data sets
 
 ## Requirements
@@ -30,19 +30,19 @@ Key design elements:
 
 ### Bible Scripture Data (DES-1001)
 - **Description**: Hierarchical storage of Bible excerpts keyed by book name, chapter number, and verse number.
-- **Fields/Properties**: Book name (string key), chapters (object with chapter numbers), verses (object with verse numbers and text)
+- **Fields/Properties**: Book name (string key), chapters (object with chapter numbers), verses (object with verse numbers and text); supporting types: VerseType (Record<number, string>), ChapterType (Record<number, { verses: VerseType }>), BibleType (Record<string, { chapters: ChapterType }>), BookName (keyof typeof Bible)
 - **Relationships**: Referenced by Notes index to retrieve full verse text by BookName and chapter:verse reference.
 
 ### Topic Notes Index (DES-1002)
 - **Description**: Array of topical annotations linking Bible verses to learning themes.
-- **Fields/Properties**: topic (string), book (BookName), verse (chapter:verse string), note (annotation text)
+- **Fields/Properties**: topic (string), book (BookName), verse (chapter:verse string), note (annotation text); supporting type: Note ({ topic: string; book: BookName; verse: string; note: string })
 - **Relationships**: Indexed by topic; filters based on substring match; references Bible data for display.
 
 ## Components
 ### Wizard Form Engine (DES-1003)
 - **Description**: Multi-step form UI that dynamically generates input fields from a question set, manages step navigation, collects user input, and persists to localStorage.
-- **Type**: Service (entry point run method)
-- **Key Methods**: run, buildForm, applyBehaviors, applyTriggers, getFormData
+- **Type**: Service (entry point run method), with FormGen class for form generation
+- **Key Methods**: run, buildForm, applyBehaviors, applyTriggers, getFormData; FormGen: render, renderFollowup, createInput, createLabel, createStep
 - **Dependencies**: questions data set (DES-1000), localStorage API, DOM manipulation
 
 ### Topic Input Filter (DES-1004)
