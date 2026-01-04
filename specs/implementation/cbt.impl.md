@@ -20,17 +20,17 @@ See @cbt.design for detailed design specifications that this implementation fulf
 ```
 
 ### DES-1000: CBT Question Set
-- IMP-1003: questions
+- @cbt.design/IMP-1003: questions
 
 ### DES-1001: Bible Scripture Data
-- IMP-1005: Bible
-- IMP-1006: VerseType
-- IMP-1007: ChapterType
-- IMP-1008: BibleType
-- IMP-1009: BookName
+- @cbt.design/IMP-1005: Bible
+- @cbt.design/IMP-1006: VerseType
+- @cbt.design/IMP-1007: ChapterType
+- @cbt.design/IMP-1008: BibleType
+- @cbt.design/IMP-1009: BookName
 
 ### DES-1002: Topic Notes Index
-- IMP-1004: Notes
+- @cbt.design/IMP-1004: Notes
 - IMP-1010: Note
 
 ### DES-1003: Wizard Form Engine
