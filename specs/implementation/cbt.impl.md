@@ -2,8 +2,8 @@
 artifact: cbt
 phase: implementation
 depends-on: ["cbt.design"]
-references: []
-last-updated: 2026-01-03
+references: ["cbt.design"]
+last-updated: 2026-01-04
 last-spec-id: IMP-1010
 ---
 
@@ -13,6 +13,11 @@ last-spec-id: IMP-1010
 cbt is a cognitive brain training web experience. It guides users through a CBT reflection wizard and a Bible topical viewer to surface scripture notes by topic.
 
 ## Design Requirements
+
+```
+bug, notice the depends-on is still there...
+See @cbt.design for detailed design specifications that this implementation fulfills.
+```
 
 ### DES-1000: CBT Question Set
 - IMP-1003: questions
@@ -85,6 +90,7 @@ cbt is a cognitive brain training web experience. It guides users through a CBT 
 
 ### FormGen (IMP-1002)
 - **Description**: Helper that renders wizard steps, labels, and inputs based on the questions data set.
+- **Belongs to**: index.ts
 - **Inheritance**: None
 - **Properties**: form: HTMLFormElement
 - **Methods**: render, renderFollowup, createInput, createLabel, createStep
@@ -170,3 +176,26 @@ keyof typeof Bible
 
 ## Tests
 - No tests defined yet.
+
+## [AI-CLARIFY]
+
+### IMPIDs with no mention in code
+- IMP-1002
+- IMP-1000
+- IMP-1001
+- IMP-1003
+- IMP-1005
+- IMP-1006
+- IMP-1007
+- IMP-1008
+- IMP-1009
+- IMP-1004
+- IMP-1010
+
+### IMP-IDs not mapped to any file
+- IMP-1002
+- IMP-1006
+- IMP-1007
+- IMP-1008
+- IMP-1009
+- IMP-1010
