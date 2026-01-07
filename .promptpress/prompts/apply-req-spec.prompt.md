@@ -1,10 +1,12 @@
 ---
-name: Apply Requirement Spec Refactoring
+name: pp-req-refactor
 agent: agent
-description: This prompt refactors a requirement specification document by synchronizing and strictifying functional and non-functional requirements.
+description: Apply Requirement Spec Refactoring
 ---
 
 # Requirement Spec Refactoring (Terse)
+
+This prompt simplifies a requirement specification document.
 
 1. Check the YAML frontmatter at the top of the document for the key `phase:`. If missing, output `ERROR: Not a specification document` and stop processing.
 2. Check the YAML frontmatter for `phase: requirement`. If missing, output `ERROR: Not a requirement specification` and stop processing.
@@ -19,3 +21,5 @@ description: This prompt refactors a requirement specification document by synch
 POST-PROCESSING:
 
 ## Re-evaluate the `Overview` section for excessive wording or unnecessary claims. It should be concise and focused on summarizing the requirements without extraneous information.
+
+## Ensure the resulting document complies with the requirements specification structure defined in req-structure.md, including all required sections in the correct order, proper frontmatter, and adherence to additional rules.

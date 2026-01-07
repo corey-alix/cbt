@@ -62,11 +62,13 @@ Refactor the services in the `src/services` folder (or equivalent) to achieve co
 - Add unit tests for core modules (Jest or Vitest).
 - Run build and existing tests after each change.
 - Verify extension functionality in VS Code.
+- Run `npm run lint:spec:md` to check for broken links in specs and prompts.
 
 ### Step 9: Documentation
 
 - Update README/docs with new names.
 - Add code comments explaining core/adapter separation.
+- Use markdown links for any references to files or documents, e.g., [filename](../path/filename.md), instead of custom formats like #file:.
 
 ## Risks
 

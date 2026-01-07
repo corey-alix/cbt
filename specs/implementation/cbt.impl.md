@@ -3,7 +3,7 @@ artifact: cbt
 phase: implementation
 depends-on: ["cbt.design"]
 references: ["cbt.design"]
-last-updated: 2026-01-04
+last-updated: 2026-01-06
 last-spec-id: IMP-1010
 ---
 
@@ -88,7 +88,7 @@ See @cbt.design for detailed design specifications that this implementation fulf
 
 ## Classes
 
-### FormGen (IMP-1002)
+### FormGen (**IMP-1002**)
 - **Description**: Helper that renders wizard steps, labels, and inputs based on the questions data set.
 - **Belongs to**: index.ts
 - **Inheritance**: None
@@ -157,7 +157,6 @@ keyof typeof Bible
 ### run (IMP-1001)
 - **Belongs to**: pages/bible/index.ts
 - **Description**: Sets up the Bible topical viewer input, attaches filtering, and renders matching verse notes with scripture text.
-- **Parameters**: None
 - **Return Type**: void
 - **Algorithm**:
   - Acquire or create the topic input using forceElement and focus it; seed value from localStorage topic.

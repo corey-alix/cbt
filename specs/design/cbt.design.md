@@ -3,7 +3,7 @@ artifact: cbt
 phase: design
 depends-on: ["cbt.req"]
 references: ["cbt.req"]
-last-updated: 2026-01-04
+last-updated: 2026-01-06
 last-spec-id: DES-1004
 ---
 # Design Specification for cbt
@@ -19,8 +19,8 @@ Key design elements:
 - Dependencies: DOM APIs, localStorage, static data sets
 
 ## Requirements
-- @cbt.req/FR-1000: Enable CBT users to step through a reflection questionnaire and persist responses => DES-1003
-- @cbt.req/FR-1001: Enable Bible users to search verses by topic and view scripture text with notes => DES-1004
+- @cbt.req/FR-1000: DES-1003
+- @cbt.req/FR-1001: DES-1004
 
 ## Data Models
 ### CBT Question Set (DES-1000)

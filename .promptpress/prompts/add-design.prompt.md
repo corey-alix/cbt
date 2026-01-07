@@ -4,6 +4,11 @@ agent: agent
 description: This prompt instructs the AI to add a new design element (DES-XXXX) to an existing design specification document, based on a requirements feature request ID and user-provided context, following the structure defined in impl-to-design-spec.prompt.md.
 ---
 
+## Reference Documents
+
+- **Templates**: Follow [design-template.md](../templates/design-template.md) for the new design element format and structure.
+- **Rules**: Follow [impl-common.md](../templates/impl-common.md) for DES assignment.
+
 ## Task Overview
 
 Given a requirements feature request ID (FR-XXXX) and user-provided context describing the design element, the AI must:
@@ -19,21 +24,9 @@ Given a requirements feature request ID (FR-XXXX) and user-provided context desc
 - Check the document's frontmatter for `phase: design`.
 - If the phase is not "design", respond with an error message and do not proceed.
 
-## DES-XXXX Assignment
-
-- Find the highest existing DES-XXXX identifier in the document.
-- Assign the next sequential ID (e.g., if DES-1038 exists, assign DES-1039).
-
 ## New Design Element Format
 
-Add the new design element in the Components section using this format (adjust section as appropriate):
-
-### <ComponentName> (DES-XXXX)
-
-- **Description**: [High-level responsibilities and role, derived from FR and user context]
-- **Type**: [Class, Interface, etc. - infer from context]
-- **Key Methods**: [Generalized list of public methods - infer from context]
-- **Dependencies**: [Internal and external dependencies - infer from context]
+Follow the component format defined in [design-template.md](../templates/design-template.md).
 
 ## Document Updates
 

@@ -10,27 +10,24 @@ When adding a new feature to the system, follow this process to maintain traceab
 
 ## Reference Documents
 
-- **Templates**: Use #file:../templates/ for document structure
-    - #file:../templates/req-template.md - Requirements specification format
-    - #file:../templates/design-template.md - Design specification format
-    - #file:../templates/impl-template.md - Implementation specification format
-- **Rules**: Follow #file:../rules/spec-update-rules.md for consistent updates
+- **Templates**: Use [req-template.md](../templates/req-template.md), [design-template.md](../templates/design-template.md), [impl-template.md](../templates/impl-template.md) for document structure.
+- **Rules**: Follow [spec-update-rules.md](../rules/spec-update-rules.md) for consistent updates.
 
 ## 1. Requirements Specification Update
 
-- Add new FR-XXXX to `<project>.req.md` following #file:../templates/req-template.md
+- Add new FR-XXXX to `<project>.req.md` following [req-template.md](../templates/req-template.md)
 - Update the overview to reflect the new FR range
 - Include description, priority, and dependencies
 
 ## 2. Design Specification Update
 
-- Map the new FR-XXXX to existing or new DES-XXXX in `<project>.design.md` following #file:../templates/design-template.md
+- Map the new FR-XXXX to existing or new DES-XXXX in `<project>.design.md` following [design-template.md](../templates/design-template.md)
 - Update component descriptions if functionality is extended
 - Ensure design elements remain cohesive
 
 ## 3. Implementation Specification Update
 
-- Add new IMP-XXXX entries to `<project>.impl.md` for new methods/functions following #file:../templates/impl-template.md
+- Add new IMP-XXXX entries to `<project>.impl.md` for new methods/functions following [impl-template.md](../templates/impl-template.md)
 - Update existing IMP descriptions if functionality is extended
 - Add algorithm details and examples
 - Update Design Requirements mappings
@@ -49,7 +46,7 @@ When adding a new feature to the system, follow this process to maintain traceab
 
 ## Success Criteria
 
-- All spec documents maintain valid Markdown structure per #file:../rules/spec-update-rules.md
+- All spec documents maintain valid Markdown structure per [spec-update-rules.md](../rules/spec-update-rules.md)
 - Identifiers are sequential and unique
 - Full traceability from FR -> DES -> IMP
 - Code compiles and tests pass

@@ -6,15 +6,16 @@ No extra top-level sections allowed.
 
 - **Frontmatter** (must be first, no content before it)
 
-    ***
-    - artifact: "<project name>"
-    - phase: "design"
-    - depends-on: [ <string>* ]
-    - references: [ <string>* ]
-    - last-updated: YYYY-MM-DD
-    - last-spec-id: DES-<number>
-
-    ***
+    ```yaml
+    ---
+    artifact: <project name>
+    phase: design
+    depends-on: []
+    references: []
+    last-updated: YYYY-MM-DD
+    last-spec-id: DES-<number>
+    ---
+    ```
 
 - **H1 Title**
     - # Design Specification for <project name>
@@ -27,12 +28,12 @@ No extra top-level sections allowed.
 - **Requirements**
     - ## Requirements
     - <one or more lines>
-      - - @<artifact>.req/<FR-ID>: <DES-ID>[, <DES-ID>]*
+      - - @<artifact>.req/<FR-4-digit>: <DES-4-digit>[, <DES-4-digit>]*
 
 - **Data Models**
     - ## Data Models
     - <one or more model blocks>
-      - ### <Model Name> (DES-<number>)
+      - ### <Model Name> (DES-<4-digit>)
       - - **Description**: <text>
       - - **Fields/Properties**: <text>
       - - **Relationships**: <text>
@@ -40,7 +41,7 @@ No extra top-level sections allowed.
 - **Components**
     - ## Components
     - <one or more component blocks>
-      - ### <Component Name> (DES-<number>)
+      - ### <Component Name> (DES-<4-digit>)
       - - **Description**: <text>
       - - **Type**: <text>
       - - **Key Methods**: <text>
@@ -70,6 +71,6 @@ No extra top-level sections allowed.
 
 ## Additional Rules (semantic, checked in code)
 
-- All DES-IDs must be unique, sequential, and start after last-spec-id
+- All DES-IDs must be unique, sequential, 4-digit numbers (e.g., DES-0001), and start after last-spec-id
 - Every DES-ID in Requirements must reference valid FR-IDs
 - Frontmatter keys must match exactly (order does not matter)

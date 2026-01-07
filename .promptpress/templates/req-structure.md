@@ -6,15 +6,16 @@ No extra top-level sections allowed.
 
 - **Frontmatter** (must be first, no content before it)
 
-    ***
-    - artifact: "<project name>"
-    - phase: "requirement"
-    - depends-on: [ <string>* ]
-    - references: [ <string>* ]
-    - last-updated: YYYY-MM-DD
-    - last-spec-id: FR-<number> or NFR-<number>
-
-    ***
+    ```yaml
+    ---
+    artifact: <project name>
+    phase: requirement
+    depends-on: []
+    references: []
+    last-updated: YYYY-MM-DD
+    last-spec-id: FR-<number> or NFR-<number>
+    ---
+    ```
 
 - **H1 Title**
     - # Requirements Specification for <project name>
@@ -27,7 +28,7 @@ No extra top-level sections allowed.
 - **Functional Requirements**
     - ## Functional Requirements
     - <one or more requirement blocks>
-      - ### FR-<number>
+      - ### FR-<4-digit>
       - - **Description**: <text>
       - - **Priority**: <text>
       - - **Dependencies**: <text>
@@ -35,7 +36,7 @@ No extra top-level sections allowed.
 - **Non-Functional Requirements**
     - ## Non-Functional Requirements
     - <one or more requirement blocks>
-      - ### NFR-<number>
+      - ### NFR-<4-digit>
       - - **Description**: <text>
       - - **Priority**: <text>
       - - **Dependencies**: <text>
@@ -63,5 +64,5 @@ No extra top-level sections allowed.
 
 ## Additional Rules (semantic, checked in code)
 
-- All FR-IDs and NFR-IDs must be unique, sequential, and start after last-spec-id
+- All FR-IDs and NFR-IDs must be unique, sequential, 4-digit numbers (e.g., FR-0001), and start after last-spec-id
 - Frontmatter keys must match exactly (order does not matter)

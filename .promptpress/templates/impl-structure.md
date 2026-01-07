@@ -6,15 +6,16 @@ No extra top-level sections allowed except [AI-CLARIFY] at the end (optional).
 
 - **Frontmatter** (must be first, no content before it)
 
-    ***
-    - artifact: "<project name>"
-    - phase: "implementation"
-    - depends-on: [ <string>* ]
-    - references: [ <string>* ]
-    - last-updated: YYYY-MM-DD
-    - last-spec-id: IMP-<number>
-
-    ***
+    ```yaml
+    ---
+    artifact: <project name>
+    phase: implementation
+    depends-on: []
+    references: []
+    last-updated: YYYY-MM-DD
+    last-spec-id: IMP-<number>
+    ---
+    ```
 
 - **H1 Title**
     - # Implementation Specification for <project name>

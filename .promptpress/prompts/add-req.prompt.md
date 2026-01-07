@@ -4,6 +4,11 @@ agent: agent
 description: This prompt instructs the AI to add a new functional requirement (FR-XXXX) to an existing requirements specification document, following the structure defined in design-to-req-spec.prompt.md.
 ---
 
+## Reference Documents
+
+- **Templates**: Follow [req-template.md](../templates/req-template.md) for the new requirement format and structure.
+- **Rules**: Follow [impl-common.md](../templates/impl-common.md) for FR assignment.
+
 ## Task Overview
 
 Given a user prompt describing a new feature request, the AI must:
@@ -19,20 +24,9 @@ Given a user prompt describing a new feature request, the AI must:
 - Check the document's frontmatter for `phase: requirement`.
 - If the phase is not "requirement", respond with an error message and do not proceed.
 
-## FR-XXXX Assignment
-
-- Find the highest existing FR-XXXX identifier in the document.
-- Assign the next sequential ID (e.g., if FR-1018 exists, assign FR-1019).
-
 ## New Requirement Format
 
-Add the new requirement in the Functional Requirements section using this exact format:
-
-### FR-XXXX
-
-- **Description**: [High-level description derived from the user prompt]
-- **Priority**: [High/Medium/Low - infer based on feature criticality]
-- **Dependencies**: [Related components or data models - infer from context]
+Follow the functional requirement format defined in [req-template.md](../templates/req-template.md).
 
 ## Document Updates
 
