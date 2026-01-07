@@ -5,8 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc",
-    "test": "vitest"
+    "dev": "tsc --noEmit",
+    "test": "vitest run"
   },
   "repository": {
     "type": "git",
