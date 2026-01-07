@@ -15,6 +15,8 @@ function on(eventName: string, cb: (detail?: any) => void) {
   document.addEventListener(eventName, (e) => cb((<any>e).detail || null))
 }
 
+export { trigger, on }
+
 // cbt/IMP-1000
 export function run() {
   buildForm()
@@ -157,7 +159,7 @@ function autoForLabel() {
 }
 
 class FormGen {
-  constructor(private form: HTMLFormElement) {}
+  constructor(private form: HTMLFormElement) { }
 
   render() {
     const target = this.form.querySelector("#questions-go-here")
